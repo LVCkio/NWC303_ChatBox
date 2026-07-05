@@ -1,0 +1,7 @@
+SỰ CỐ: Người dùng bị lừa hướng điều hướng sang trang Web giả mạo (DNS Spoofing / Phishing Page) khi dùng mạng công cộng.
+DẤU HIỆU NHẬN BIẾT: Khi truy cập các trang web quen thuộc (như Facebook, Gmail, Ngân hàng), trình duyệt hiển thị cảnh báo bảo mật nguy hiểm "Your connection is not private" (Hết hạn chứng chỉ SSL / Cảnh báo đỏ). Hoặc giao diện trang web trông khác lạ, sai chính tả ở thanh địa chỉ (Ví dụ: facebok.com thay vì facebook.com).
+QUY TRÌNH XỬ LÝ AN TOÀN:
+Bước 1: Tắt ngay tab trình duyệt đó, không bấm vào nút "Proceed/Tiếp tục truy cập" khi trình duyệt đã cảnh báo đỏ.
+Bước 2: Không nhập bất kỳ thông tin đăng nhập hoặc mã OTP nào vào trang web đó.
+Bước 3: Thực hiện đổi DNS trên máy tính sang DNS an toàn của Google (8.8.8.8 và 8.8.4.4) hoặc Cloudflare (1.1.1.1) để tránh bị điều hướng sai lệch.
+Bước 4: Xóa lịch sử và bộ nhớ đệm (Cache) của trình duyệt web để xóa bỏ các cấu hình độc hại bị lưu lại.

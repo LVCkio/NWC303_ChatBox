@@ -1,0 +1,7 @@
+SỰ CỐ: Tấn công giả mạo điểm truy cập Wi-Fi (Rogue Access Point / Evil Twin).
+DẤU HIỆU NHẬN BIẾT: Trong danh sách mạng Wi-Fi xuất hiện hai mạng có tên giống hệt nhau (Ví dụ: cùng tên là "Wi-Fi_Truong_Hoc"). Một trong hai mạng không yêu cầu mật khẩu bảo mật (Open Network), hoặc khi kết nối vào thì tự động hiện ra một trang web lạ yêu cầu người dùng nhập lại mật khẩu Wi-Fi hoặc thông tin tài khoản cá nhân.
+QUY TRÌNH XỬ LÝ AN TOÀN:
+Bước 1: Ngắt kết nối (Disconnect) ngay lập tức khỏi mạng Wi-Fi nghi ngờ giả mạo. Tuyệt đối không nhập bất kỳ thông tin tài khoản, mật khẩu nào vào trang web hiển thị lên.
+Bước 2: Bật tính năng "Forget Network" (Quên mạng) đối với mạng Wi-Fi trùng tên đó trên điện thoại hoặc máy tính để tránh thiết bị tự động kết nối lại lần sau.
+Bước 3: Sử dụng tạm thời mạng dữ liệu di động (4G/5G) cá nhân nếu cần xử lý công việc gấp, tuyệt đối không dùng mạng Wi-Fi không rõ nguồn gốc để thực hiện giao dịch ngân hàng hoặc đăng nhập email công việc.
+Bước 4: Báo cáo vị trí và tên Wi-Fi giả mạo cho bộ phận an ninh mạng của công ty/trường học để họ sử dụng các công cụ quét sóng (như Wi-Fi Analyzer) tìm ra vị trí đặt thiết bị Rogue AP vật lý và tịch thu.

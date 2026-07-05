@@ -1,0 +1,7 @@
+SỰ CỐ: Tấn công giả mạo địa chỉ ARP (ARP Spoofing / ARP Poisoning) trong mạng nội bộ LAN.
+DẤU HIỆU NHẬN BIẾT: Mạng máy tính tự nhiên bị chậm đột ngột hoặc mất kết nối Internet hoàn toàn, tuy nhiên biểu tượng mạng ở góc màn hình vẫn báo có kết nối. Hệ thống Windows có thể hiển thị cảnh báo "Duplicate IP address detected" (Phát hiện trùng lặp địa chỉ IP). Khi gõ lệnh 'arp -a' trong CMD, thấy nhiều địa chỉ IP khác nhau nhưng lại có chung một địa chỉ vật lý MAC.
+QUY TRÌNH XỬ LÝ AN TOÀN:
+Bước 1: Ngay lập tức ngắt kết nối Wi-Fi hoặc rút dây mạng LAN ra khỏi máy tính để cô lập thiết bị, tránh bị hacker nghe lén dữ liệu.
+Bước 2: Mở Command Prompt (gõ cmd), nhập lệnh 'arp -a' để kiểm tra bảng địa chỉ và chụp lại màn hình làm bằng chứng sự cố.
+Bước 3: Bật tính năng bảo mật/tường lửa (Firewall) trên máy tính hoặc phần mềm diệt virus sang chế độ bảo vệ nghiêm ngặt.
+Bước 4: Thông báo ngay cho quản trị viên hệ thống để họ cấu hình tính năng Dynamic ARP Inspection (DAI) trên các thiết bị Switch trung tâm nhằm chặn đứng cuộc tấn công.
