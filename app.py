@@ -1,11 +1,9 @@
 import streamlit as st
 import google.genai as genai
+from google import genai
 import os
 
-# 1. CẤU HÌNH GOOGLE GEMINI API
-# THAY ĐOẠN MÃ API KEY CỦA BẠN VÀO ĐÂY
-GEMINI_API_KEY = "????"
-genai.configure(api_key=GEMINI_API_KEY)
+client = genai.Client(api_key=st.secrets["GEMINI_API_KEY"])
 
 
 # 2. HÀM ĐỌC TOÀN BỘ TÀI LIỆU SOP TỪ BẠN B (KIẾN THỨC NỀN - RAG)
@@ -53,25 +51,23 @@ if user_query := st.chat_input(
         st.write(user_query)
     st.session_state.messages.append({"role": "user", "content": user_query})
 
-    # Gọi mô hình AI Gemini và ép nó đọc tài liệu SOP
+    # Gọi mô hình AI Gemini bằng cú pháp đời mới
     try:
-        model = genai.GenerativeModel("gemini-2.5-flash")
-
-        # System Prompt đóng vai trò ép AI chỉ trả lời dựa trên tài liệu
+        # Gộp tài liệu SOP vào System Instruction để ép AI đọc dữ liệu
         system_instruction = f"""
-        Bạn là một chuyên gia An ninh mạng (SecOps Engineer) hỗ trợ kỹ thuật cho người dùng không chuyên.
-        Dưới đây là tài liệu quy trình chuẩn (SOP) về các sự cố mạng:
-        {SOP_KNOWLEDGE}
-        
-        Nhiệm vụ của bạn:
-        1. Đọc mô tả lỗi của người dùng: '{user_query}'
-        2. Đối chiếu với tài liệu SOP ở trên xem đây là sự cố gì. Nhớ phân loại rõ tên sự cố.
-        3. Đưa ra hướng dẫn từng bước (Bước 1, Bước 2...) một cách ngắn gọn, dễ hiểu và đặt tính AN TOÀN BẢO MẬT lên hàng đầu cho người dùng.
-        4. Nếu lỗi của người dùng không nằm trong tài liệu SOP trên, hãy trả lời lịch sự rằng bạn chưa có dữ liệu về lỗi này và khuyên họ liên hệ quản trị viên. Không tự bịa câu trả lời ngoài tài liệu.
-        """
+Bạn là một chuyên gia An ninh mạng (SecOps Engineer) hỗ trợ xử lý sự cố.
+Dưới đây là tài liệu quy trình chuẩn (SOP) về các sự cố mạng:
+{SOP_KNOWLEDGE}
+"""
 
-        # Lấy phản hồi từ AI
-        response = model.generate_content(system_instruction)
+        # Gọi Client generate nội dung
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=user_query,
+            config={"system_instruction": system_instruction},
+        )
+
+        # Lấy văn bản trả về từ Bot
         bot_response = response.text
 
     except Exception as e:
