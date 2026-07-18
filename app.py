@@ -45,11 +45,6 @@ with st.sidebar:
     st.title("🛡️ NWC303 SecOps Chatbot")
     st.markdown("---")
 
-    st.subheader("📊 Trạng Thái Hệ Thống")
-    st.metric(label="Mức độ cảnh báo (Threat Level)", value="BÌNH THƯỜNG", delta="- Ổn định", delta_color="normal")
-    st.metric(label="Cơ sở dữ liệu SOP", value="Đã đồng bộ", delta="Online")
-    st.markdown("🟢 **AI Engine:** Gemini 2.5 Flash")
-
     st.divider()
 
     # Nút xóa lịch sử chat
